@@ -2,6 +2,7 @@ package com.example.tkontsevich.diceroller
 
 import android.os.Bundle
 import android.widget.Button
+import android.util.Log
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import java.util.*
@@ -19,6 +20,33 @@ class MainActivity : AppCompatActivity() {
         }
         diceImage = findViewById(R.id.dice_image)
 
+        Log.i(LOG_TAG, "onCreate()")
+
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.i(LOG_TAG, "onStart()")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.i(LOG_TAG, "onResume()")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.i(LOG_TAG, "onPause()")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.i(LOG_TAG, "onStop()")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.i(LOG_TAG, "onDestroy()")
     }
 
     private fun rollDice() {
@@ -32,4 +60,5 @@ class MainActivity : AppCompatActivity() {
             }
         diceImage.setImageResource(drawableResource)
     }
+
 }
